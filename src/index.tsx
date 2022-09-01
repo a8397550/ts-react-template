@@ -4,6 +4,8 @@ import { createRoot } from 'react-dom/client';
 import { Route, HashRouter, Routes } from 'react-router-dom';
 import './index.less'
 import BaseLayout from '@/layouts/index'
+import Login from '@/pages/login/index'
+import NotFound from '@/pages/home/404'
 
 window.React = React;
 
@@ -13,11 +15,13 @@ function render(props) {
 
   root.render(<HashRouter>
     <Routes>
+      <Route path="login" element={<Login />} />
       <Route path='/system' element={<BaseLayout />}>
         <Route path="users" />
         <Route path="roles" />
         <Route path="rules" />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   </HashRouter>);
 
