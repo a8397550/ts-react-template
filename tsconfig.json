@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["esnext", "dom"],
+    "jsx": "react",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "pretty": true,
+    "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
+    "strict": true,
+    "paths": {
+      "@/*": ["./src/*"],
+    }
+  },
+  "include": [
+    "src/**/*",
+    "node_modules/vision-canvas-l-core/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+  ]
+}
