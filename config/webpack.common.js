@@ -44,16 +44,16 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           'file-loader'
         ]
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          'file-loader'
-        ]
+        test: /\.(jpe?g|png|gif|svg)$/,
+        type: 'asset',
+        generator: { filename: 'img/[name]_[hash:6][ext]' },
+        parser: { dataUrlCondition: { maxSize: 100 * 1024 } }
       },
       {
         test: /\.(csv|tsv)$/,

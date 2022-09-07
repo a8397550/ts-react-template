@@ -16,7 +16,7 @@ function render(props) {
   root.render(<HashRouter>
     <Routes>
       <Route path="login" element={<Login />} />
-      <Route path='/system' element={<BaseLayout />}>
+      <Route path='/' element={<BaseLayout />}>
         <Route path="users" />
         <Route path="roles" />
         <Route path="rules" />

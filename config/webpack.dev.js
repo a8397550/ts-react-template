@@ -13,12 +13,11 @@ module.exports = merge(common, {
   plugins: [
     new webpack.DefinePlugin({ 'process.env.BASE_NODE': '"local"' })
   ],
-  entry: {
-    app: path.join(__dirname, '../src/index.tsx'),
-  },
+  entry: { app: path.join(__dirname, '../src/index.tsx'), },
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
+    static: { directory: path.join(__dirname, '../public'), },
     https: {
       key: fs.readFileSync(path.resolve(__dirname, './https/cert.key')),
       cert: fs.readFileSync(path.resolve(__dirname, './https/cert.crt')),
